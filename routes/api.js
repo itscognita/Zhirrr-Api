@@ -224,7 +224,7 @@ router.get('/addapikey', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'zahirgans') return res.json(loghandler.invalidKey)
+    if (apikey != 'MansKey') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.insert({
@@ -263,7 +263,7 @@ router.get('/remove', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'zahirgans') return res.json(loghandler.invalidKey)
+    if (apikey != 'MansKey') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.remove({
@@ -295,7 +295,7 @@ router.get('/tiktod', async (req, res, next) => {
 
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
      if (!url) return res.json(loghandler.noturl)
 
      TikTokScraper.getVideoMeta(url, options)
@@ -317,7 +317,7 @@ router.get('/tiktod/stalk', async (req, res, next) => {
         username = req.query.username
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
     if (!username) return res.json(loghandler.notusername)
 
 
@@ -342,7 +342,7 @@ router.get('/randomquote', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
 
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/quotes`))
         .then(response => response.json())
@@ -364,7 +364,7 @@ router.get('/infonpm', async (req, res, next) => {
             query = req.query.query
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
     if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
 
        fetch(encodeURI(`https://registry.npmjs.org/${query}`))
@@ -387,7 +387,7 @@ router.get('/jadwal-bioskop', (req, res) => {
 var apikeyInput = req.query.apikey
 
 if(!apikeyInput) return res.json(loghandler.notparam)
-if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+if(apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
 const { default: Axios } = require('axios')
 const cheerio = require('cheerio')
 
@@ -427,7 +427,7 @@ router.get('/short/tiny', async (req, res, next) => {
         url = req.query.url
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
      if (!url) return res.json(loghandler.noturl)
 
      request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
@@ -453,7 +453,7 @@ router.get('/base', async (req, res, next) => {
 		decode = req.query.decode,
 		apikeyInput = req.query.apikey;
 		if (!apikeyInput) return res.json(loghandler.notparam)
-		if (apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+		if (apikeyInput != 'MansKey') return res.json(loghandler.invalidKey)
 		if (!type) return res.json({status: false, creator, code: 404, message: 'masukan parameter type, type yang tersedia : base64 , base32'})
 		if (type == 'base64' && encode){
 				Base("b64enc", encode)
